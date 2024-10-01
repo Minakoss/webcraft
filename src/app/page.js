@@ -41,10 +41,10 @@ export default function Home() {
                 About
               </li>
               <li className="text-lg font-medium text-gray-400 hover:text-white cursor-pointer">
-                Experience
+                Projects
               </li>
               <li className="text-lg font-medium text-gray-400 hover:text-white cursor-pointer">
-                Projects
+                Connect
               </li>
             </ul>
           </nav>
