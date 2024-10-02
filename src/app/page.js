@@ -1,6 +1,7 @@
-"use client"; // Προσθήκη αυτής της γραμμής
+"use client"; // Ensure the component is rendered on the client side
 
 import { useState, useEffect } from "react";
+import Link from "next/link"; // Import Link from next/link
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -18,7 +19,7 @@ export default function Home() {
   }, []);
 
   const gradientStyle = {
-    background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`, // Πολύ πιο αχνό
+    background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
 
   return (
@@ -29,34 +30,36 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
         {/* Αριστερή στήλη */}
         <div className="flex flex-col justify-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white">
+          <h1 className="text-2xl md:text-4xl font-bold text-white">
             WebCraft
           </h1>
-          <h2 className="text-lg md:text-xl font-medium text-gray-300">
+          <h2 className="text-md md:text-xl font-medium text-gray-300">
             Frontend Engineer
           </h2>
-          <p className="text-md md:text-lg text-gray-400">
+          <p className="text-md text-gray-400">
             I build pixel-perfect, engaging, and accessible digital experiences.
           </p>
 
           {/* Μενού πλοήγησης */}
-          <nav className="mt-6 md:mt-8">
-            <ul className="space-y-2 md:space-y-4">
-              <li className="text-md md:text-lg font-medium text-gray-400 hover:text-white cursor-pointer">
-                About
+          <nav className="mt-4 md:mt-8">
+            <ul className="space-y-2">
+              <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
+                <Link href="/about">About</Link> {/* Link to the About page */}
               </li>
-              <li className="text-md md:text-lg font-medium text-gray-400 hover:text-white cursor-pointer">
-                Projects
+              <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
+                <Link href="/projects">Projects</Link>{" "}
+                {/* Link to the Projects page */}
               </li>
-              <li className="text-md md:text-lg font-medium text-gray-400 hover:text-white cursor-pointer">
-                Connect
+              <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
+                <Link href="/connect">Connect</Link>{" "}
+                {/* Link to the Connect page */}
               </li>
             </ul>
           </nav>
         </div>
 
-        {/* Δεξιά στήλη με margin-top */}
-        <div className="text-md md:text-lg space-y-4 mt-10 md:mt-20">
+        {/* Δεξιά στήλη */}
+        <div className="text-md space-y-4 mt-10 md:mt-20">
           <div className="text-gray-400">
             <h1 className="text-lg md:text-xl font-bold text-white">
               Welcome to WebCraft
@@ -90,6 +93,7 @@ export default function Home() {
               <li>Content management systems</li>
             </ul>
           </div>
+
           {/* Εμπειρία */}
           <div className="mt-6 md:mt-8">
             <h3 className="text-lg text-white">
@@ -104,21 +108,18 @@ export default function Home() {
             </p>
 
             {/* Τεχνολογίες */}
-            <div className="flex space-x-2 md:space-x-4 mt-4">
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+            <div className="flex flex-wrap space-x-2 md:space-x-4 mt-4">
+              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
                 HTML/CSS
               </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
                 JavaScript
               </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
-                TypeScript
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
                 React
               </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
-                Wordpress
+              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+                WordPress
               </span>
             </div>
           </div>
