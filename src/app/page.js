@@ -58,9 +58,9 @@ export default function Home() {
         {/* Δεξιά στήλη με margin-top */}
         <div className="text-md md:text-lg space-y-4 mt-10 md:mt-20">
           <div className="text-gray-400">
-            <h4 className="text-lg md:text-xl font-bold text-white">
+            <h1 className="text-lg md:text-xl font-bold text-white">
               Welcome to WebCraft
-            </h4>
+            </h1>
             <p>
               At WebCraft, we bring your digital ideas to life through modern,
               innovative, and beautifully crafted websites and applications. Our
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
           {/* Εμπειρία */}
           <div className="mt-6 md:mt-8">
-            <h3 className="text-lg md:text-xl font-bold text-white">
+            <h3 className="text-lg text-white">
               Let WebCraft transform your vision into reality. Together, we can
               build something remarkable.
             </h3>
