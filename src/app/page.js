@@ -3,6 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link"; // Import Link from next/link
 import Footer from "./components/Footer"; // Import Footer
+import {
+  FaGithub,
+  FaLinkedin,
+  FaCodepen,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -25,12 +32,12 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen text-light-gray p-4 md:p-8"
+      className="min-h-screen text-light-gray p-4 md:p-8 "
       style={gradientStyle}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto ">
         {/* Αριστερή στήλη */}
-        <div className="flex flex-col justify-center space-y-4">
+        <div className="flex flex-col justify-center space-y-4 md:sticky top-0 h-screen">
           <h1 className="text-2xl md:text-4xl font-bold text-white">
             WebCraft
           </h1>
@@ -43,25 +50,46 @@ export default function Home() {
 
           {/* Μενού πλοήγησης */}
           <nav className="mt-4 md:mt-8">
-            <ul className="space-y-2">
-              {/* <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
-                <Link href="/about">About</Link> {/* Link to the About page 
-              </li> */}
-              */
-              <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
-                <Link href="/projects">Projects</Link>{" "}
-                {/* Link to the Projects page */}
+            <ul className="space-y-6">
+              <li className="group text-md font-medium text-gray-400 hover:text-white cursor-pointer">
+                <Link href="/projects">
+                  <span className="relative">
+                    Projects
+                    <span className="absolute left-0 bottom-0 w-full h-[1px] bg-gray-400 opacity-0 group-hover:opacity-100 group-hover:h-[2px] transition-all duration-300"></span>
+                  </span>
+                </Link>
               </li>
-              <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
-                <Link href="/connect">Connect</Link>{" "}
-                {/* Link to the Connect page */}
+              <li className="group text-md font-medium text-gray-400 hover:text-white cursor-pointer">
+                <Link href="/connect">
+                  <span className="relative">
+                    Connect
+                    <span className="absolute left-0 bottom-0 w-full h-[1px] bg-gray-400 opacity-0 group-hover:opacity-100 group-hover:h-[2px] transition-all duration-300"></span>
+                  </span>
+                </Link>
               </li>
             </ul>
           </nav>
+          <div className="flex space-x-4 mt-8 justify-left">
+            <Link href="https://github.com/Minakoss" target="blank">
+              <FaGithub className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
+            </Link>
+            <Link href="https://linkedin.com" target="blank">
+              <FaLinkedin className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
+            </Link>
+            <Link href="https://codepen.io/Minakoss" target="blank">
+              <FaCodepen className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
+            </Link>
+            <Link href="https://instagram.com" target="blank">
+              <FaInstagram className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
+            </Link>
+            <Link href="https://twitter.com" target="blank">
+              <FaTwitter className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
+            </Link>
+          </div>
         </div>
 
         {/* Δεξιά στήλη */}
-        <div className="text-md space-y-4 mt-10 md:mt-20">
+        <div className="text-md space-y-4 mt-10 md:mt-20 overflow-y-scroll h-screen">
           <div className="text-gray-400">
             <h1 className="text-lg md:text-xl font-bold text-white">
               Welcome to WebCraft
@@ -111,18 +139,18 @@ export default function Home() {
             </p>
 
             {/* Τεχνολογίες */}
-            <div className="flex flex-wrap space-x-2 md:space-x-4 mt-4">
-              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+            <div className="flex flex-wrap space-x-2 md:space-x-2 mt-4">
+              <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
                 HTML/CSS
               </span>
-              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+              <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
                 JavaScript
               </span>
-              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+              <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
                 React
               </span>
-              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
-                Workpress
+              <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+                WordPress
               </span>
             </div>
           </div>

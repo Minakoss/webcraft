@@ -1,7 +1,7 @@
-"use client"; // Ensures the component is rendered on the client side
+"use client"; // Προσθέτουμε αυτό για να το κάνουμε Client Component
 
 import { useState, useEffect } from "react";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 
 export default function Projects() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -31,59 +31,159 @@ export default function Projects() {
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
           My Projects
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="space-y-8">
           {/* Example Project 1 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-white">
-              Project Title 1
-            </h2>
-            <p className="text-gray-400">
-              Brief description of project 1. Highlight key features and
-              technologies used.
-            </p>
-            <a
-              href="https://linktoyourproject1.com"
-              className="text-blue-400 hover:underline"
-            >
-              View Project
-            </a>
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+            <img
+              src="/path-to-your-image1.png"
+              alt="Project 1"
+              className="w-1/3 rounded-lg mr-4"
+            />
+            <div className="flex flex-col">
+              <h2 className="text-xl font-semibold text-white">
+                Build a Spotify Connected App
+              </h2>
+              <p className="text-gray-400">
+                Video course that teaches how to build a web app with the
+                Spotify Web API. Topics covered include REST APIs, user auth
+                flows, and more.
+              </p>
+              <a
+                href="https://linktoyourproject1.com"
+                className="text-blue-400 hover:underline mt-2"
+              >
+                View Project ↗
+              </a>
+              <div className="flex space-x-2 mt-4">
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  React
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Express
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Spotify API
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Heroku
+                </span>
+              </div>
+            </div>
           </div>
-          {/* Example Project 2 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-white">
-              Project Title 2
-            </h2>
-            <p className="text-gray-400">
-              Brief description of project 2. Highlight key features and
-              technologies used.
-            </p>
-            <a
-              href="https://linktoyourproject2.com"
-              className="text-blue-400 hover:underline"
-            >
-              View Project
-            </a>
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+            <img
+              src="/path-to-your-image1.png"
+              alt="Project 1"
+              className="w-1/3 rounded-lg mr-4"
+            />
+            <div className="flex flex-col">
+              <h2 className="text-xl font-semibold text-white">
+                Build a Spotify Connected App
+              </h2>
+              <p className="text-gray-400">
+                Video course that teaches how to build a web app with the
+                Spotify Web API. Topics covered include REST APIs, user auth
+                flows, and more.
+              </p>
+              <a
+                href="https://linktoyourproject1.com"
+                className="text-blue-400 hover:underline mt-2"
+              >
+                View Project ↗
+              </a>
+              <div className="flex space-x-2 mt-4">
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  React
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Express
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Spotify API
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Heroku
+                </span>
+              </div>
+            </div>
           </div>
-          {/* Example Project 3 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-white">
-              Project Title 3
-            </h2>
-            <p className="text-gray-400">
-              Brief description of project 3. Highlight key features and
-              technologies used.
-            </p>
-            <a
-              href="https://linktoyourproject3.com"
-              className="text-blue-400 hover:underline"
-            >
-              View Project
-            </a>
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+            <img
+              src="/path-to-your-image1.png"
+              alt="Project 1"
+              className="w-1/3 rounded-lg mr-4"
+            />
+            <div className="flex flex-col">
+              <h2 className="text-xl font-semibold text-white">
+                Build a Spotify Connected App
+              </h2>
+              <p className="text-gray-400">
+                Video course that teaches how to build a web app with the
+                Spotify Web API. Topics covered include REST APIs, user auth
+                flows, and more.
+              </p>
+              <a
+                href="https://linktoyourproject1.com"
+                className="text-blue-400 hover:underline mt-2"
+              >
+                View Project ↗
+              </a>
+              <div className="flex space-x-2 mt-4">
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  React
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Express
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Spotify API
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Heroku
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+            <img
+              src="/path-to-your-image1.png"
+              alt="Project 1"
+              className="w-1/3 rounded-lg mr-4"
+            />
+            <div className="flex flex-col">
+              <h2 className="text-xl font-semibold text-white">
+                Build a Spotify Connected App
+              </h2>
+              <p className="text-gray-400">
+                Video course that teaches how to build a web app with the
+                Spotify Web API. Topics covered include REST APIs, user auth
+                flows, and more.
+              </p>
+              <a
+                href="https://linktoyourproject1.com"
+                className="text-blue-400 hover:underline mt-2"
+              >
+                View Project ↗
+              </a>
+              <div className="flex space-x-2 mt-4">
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  React
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Express
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Spotify API
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Heroku
+                </span>
+              </div>
+            </div>
           </div>
           {/* Add more project cards as needed */}
         </div>
       </div>
-      {/* Back button at the bottom right */}
       <Link href="/" className="absolute bottom-4 right-4">
         <span className="px-4 py-2  text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
           Back to home
