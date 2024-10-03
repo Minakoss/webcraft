@@ -1,7 +1,8 @@
-"use client"; // Ensure the component is rendered on the client side
+"use client"; // This marks the component as a Client Component
 
 import { useState, useEffect } from "react";
 import Link from "next/link"; // Import Link from next/link
+import Footer from "./components/Footer"; // Import Footer
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -34,7 +35,7 @@ export default function Home() {
             WebCraft
           </h1>
           <h2 className="text-md md:text-xl font-medium text-gray-300">
-            Frontend Engineer
+            front-end developer Services
           </h2>
           <p className="text-md text-gray-400">
             I build pixel-perfect, engaging, and accessible digital experiences.
@@ -43,9 +44,10 @@ export default function Home() {
           {/* Μενού πλοήγησης */}
           <nav className="mt-4 md:mt-8">
             <ul className="space-y-2">
-              <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
-                <Link href="/about">About</Link> {/* Link to the About page */}
-              </li>
+              {/* <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
+                <Link href="/about">About</Link> {/* Link to the About page 
+              </li> */}
+              */
               <li className="text-md font-medium text-gray-400 hover:text-white cursor-pointer">
                 <Link href="/projects">Projects</Link>{" "}
                 {/* Link to the Projects page */}
@@ -91,6 +93,7 @@ export default function Home() {
               <li>Responsive design for all devices</li>
               <li>E-commerce solutions</li>
               <li>Content management systems</li>
+              <li>Social content/management</li>
             </ul>
           </div>
 
@@ -109,22 +112,24 @@ export default function Home() {
 
             {/* Τεχνολογίες */}
             <div className="flex flex-wrap space-x-2 md:space-x-4 mt-4">
-              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
                 HTML/CSS
               </span>
-              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
                 JavaScript
               </span>
-              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
+              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
                 React
               </span>
-              <span className="px-3 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full shadow-md">
-                WordPress
+              <span className="px-4 py-2 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+                Workpress
               </span>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Προσθήκη Footer */}
     </div>
   );
 }

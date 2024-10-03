@@ -85,9 +85,9 @@ export default function Projects() {
       </div>
       {/* Back button at the bottom right */}
       <Link href="/" className="absolute bottom-4 right-4">
-        <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white font-bold py-2 px-4 rounded">
-          Back to Home
-        </button>
+        <span className="px-4 py-2  text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+          Back to home
+        </span>
       </Link>
     </div>
   );
