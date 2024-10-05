@@ -119,6 +119,8 @@ export default function Connect() {
               <option value="Business Website">Business Website</option>
               <option value="E-commerce">E-commerce</option>
               <option value="Portfolio">Portfolio</option>
+              <option>Content management systems</option>
+              <option>Social content/management</option>
             </select>
           </div>
           <div>
