@@ -1,4 +1,4 @@
-"use client"; // This marks the component as a Client Component
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link"; // Import Link from next/link
@@ -15,6 +15,7 @@ import {
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -23,8 +24,14 @@ export default function Home() {
 
     window.addEventListener("mousemove", handleMouseMove);
 
+    // Αφαιρούμε το intro μετά από 3 δευτερόλεπτα
+    const introTimeout = setTimeout(() => {
+      setIntroVisible(false);
+    }, 1500);
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      clearTimeout(introTimeout); // Καθαρίζουμε το timeout
     };
   }, []);
 
@@ -34,10 +41,19 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen text-light-gray p-4 md:p-8 "
+      className="min-h-screen text-light-gray p-4 md:p-8"
       style={gradientStyle}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto ">
+      {/* Intro Section */}
+      {isIntroVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50">
+          <h1 className="text-5xl md:text-7xl font-bold text-white animate-fade">
+            WebCraft
+          </h1>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
         {/* Αριστερή στήλη */}
         <div className="flex flex-col justify-center space-y-4 md:sticky top-0 h-screen">
           <h1 className="text-2xl md:text-4xl font-bold text-white">
