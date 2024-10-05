@@ -83,9 +83,7 @@ export default function Home() {
             <Link href="https://instagram.com" target="blank">
               <FaInstagram className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
             </Link>
-            <Link href="https://twitter.com" target="blank">
-              <FaTwitter className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
-            </Link>
+
             <Link href="https://twitter.com" target="blank">
               <FaDiscord className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
             </Link>
@@ -129,7 +127,6 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Εμπειρία */}
           <div className="mt-6 md:mt-8">
             <h3 className="text-lg text-white">
               Let WebCraft transform your vision into reality. Together, we can
