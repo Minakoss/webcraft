@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link"; // Import Link from next/link
 import Footer from "./components/Footer"; // Import Footer
+
 import {
   FaGithub,
   FaLinkedin,
