@@ -9,6 +9,7 @@ import {
   FaCodepen,
   FaInstagram,
   FaTwitter,
+  FaDiscord,
 } from "react-icons/fa";
 
 export default function Home() {
@@ -84,6 +85,9 @@ export default function Home() {
             </Link>
             <Link href="https://twitter.com" target="blank">
               <FaTwitter className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
+            </Link>
+            <Link href="https://twitter.com" target="blank">
+              <FaDiscord className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
             </Link>
           </div>
         </div>

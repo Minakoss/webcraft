@@ -35,7 +35,7 @@ export default function Projects() {
           {/* Example Project 1 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
-              src="src/project_photos/grainlife.png"
+              src="/project_photos/grainlife.png"
               alt="Project 1"
               className="w-1/3 rounded-lg mr-4"
             />
@@ -61,7 +61,7 @@ export default function Projects() {
           </div>
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
-              src="/path-to-your-image1.png"
+              src="/project_photos/wordin.png"
               alt="Project 1"
               className="w-1/3 rounded-lg mr-4"
             />
@@ -94,7 +94,7 @@ export default function Projects() {
 
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
-              src="/path-to-your-image1.png"
+              src="/project_photos/helpanimals.png"
               alt="Project 1"
               className="w-1/3 rounded-lg mr-4"
             />
@@ -124,7 +124,7 @@ export default function Projects() {
           </div>
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
-              src="/path-to-your-image1.png"
+              src="/project_photos/companypromo.png"
               alt="Project 1"
               className="w-1/3 rounded-lg mr-4"
             />
@@ -155,7 +155,7 @@ export default function Projects() {
 
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
-              src="/path-to-your-image1.png"
+              src="/project_photos/Analog-Life.png"
               alt="Project 1"
               className="w-1/3 rounded-lg mr-4"
             />
