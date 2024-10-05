@@ -29,27 +29,51 @@ export default function Projects() {
     >
       <div className="container mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
-          My Projects
+          WebCraft Projects
         </h1>
         <div className="space-y-8">
           {/* Example Project 1 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
+              src="src/project_photos/grainlife.png"
+              alt="Project 1"
+              className="w-1/3 rounded-lg mr-4"
+            />
+            <div className="flex flex-col">
+              <h2 className="text-xl font-semibold text-white">Grain Life</h2>
+              <p className="text-gray-400">Photo Gallery site</p>
+              <a
+                href="https://grainlife.gr/"
+                target="blank"
+                className="text-blue-400 hover:underline mt-2"
+              >
+                View Project ↗
+              </a>
+              <div className="flex space-x-2 mt-4">
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  HTML
+                </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  CSS
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+            <img
               src="/path-to-your-image1.png"
               alt="Project 1"
               className="w-1/3 rounded-lg mr-4"
             />
             <div className="flex flex-col">
-              <h2 className="text-xl font-semibold text-white">
-                Build a Spotify Connected App
-              </h2>
+              <h2 className="text-xl font-semibold text-white">WordIn </h2>
               <p className="text-gray-400">
-                Video course that teaches how to build a web app with the
-                Spotify Web API. Topics covered include REST APIs, user auth
-                flows, and more.
+                WordIn is a creative communication platform dedicated to
+                delivering clear, concise, and impactful content.
               </p>
               <a
-                href="https://linktoyourproject1.com"
+                href="https://wordin.netlify.app/"
+                target="blank"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
@@ -59,13 +83,41 @@ export default function Projects() {
                   React
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Express
+                  Next.js
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Spotify API
+                  Animate CSS
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+            <img
+              src="/path-to-your-image1.png"
+              alt="Project 1"
+              className="w-1/3 rounded-lg mr-4"
+            />
+            <div className="flex flex-col">
+              <h2 className="text-xl font-semibold text-white">Help-Animals</h2>
+              <p className="text-gray-400">
+                Pet Help Site is a web application designed to provide
+                resources, information, and services related to pet care and
+                support.
+              </p>
+              <a
+                href="https://animalshelp.netlify.app/"
+                target="blank"
+                className="text-blue-400 hover:underline mt-2"
+              >
+                View Project ↗
+              </a>
+              <div className="flex space-x-2 mt-4">
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  React
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Heroku
+                  Animate CSS
                 </span>
               </div>
             </div>
@@ -78,35 +130,29 @@ export default function Projects() {
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">
-                Build a Spotify Connected App
+                Company Promo Project
               </h2>
               <p className="text-gray-400">
-                Video course that teaches how to build a web app with the
-                Spotify Web API. Topics covered include REST APIs, user auth
-                flows, and more.
+                A promo company site made by Travercy Media
               </p>
               <a
-                href="https://linktoyourproject1.com"
+                href="https://managesamplepromo.netlify.app/"
+                target="blank"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
               </a>
               <div className="flex space-x-2 mt-4">
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  React
+                  HTML
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Express
-                </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Spotify API
-                </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Heroku
+                  Tailwind
                 </span>
               </div>
             </div>
           </div>
+
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
             <img
               src="/path-to-your-image1.png"
@@ -114,78 +160,35 @@ export default function Projects() {
               className="w-1/3 rounded-lg mr-4"
             />
             <div className="flex flex-col">
-              <h2 className="text-xl font-semibold text-white">
-                Build a Spotify Connected App
-              </h2>
-              <p className="text-gray-400">
-                Video course that teaches how to build a web app with the
-                Spotify Web API. Topics covered include REST APIs, user auth
-                flows, and more.
-              </p>
+              <h2 className="text-xl font-semibold text-white">Analog-Life</h2>
+              <p className="text-gray-400">Photo Gallery site</p>
               <a
-                href="https://linktoyourproject1.com"
+                href="https://analog-life.netlify.app/"
+                target="blank"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
               </a>
               <div className="flex space-x-2 mt-4">
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  React
+                  Next.js
                 </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Express
-                </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Spotify API
-                </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Heroku
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
-            <img
-              src="/path-to-your-image1.png"
-              alt="Project 1"
-              className="w-1/3 rounded-lg mr-4"
-            />
-            <div className="flex flex-col">
-              <h2 className="text-xl font-semibold text-white">
-                Build a Spotify Connected App
-              </h2>
-              <p className="text-gray-400">
-                Video course that teaches how to build a web app with the
-                Spotify Web API. Topics covered include REST APIs, user auth
-                flows, and more.
-              </p>
-              <a
-                href="https://linktoyourproject1.com"
-                className="text-blue-400 hover:underline mt-2"
-              >
-                View Project ↗
-              </a>
-              <div className="flex space-x-2 mt-4">
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
                   React
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Express
+                  Bootstrap
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Spotify API
-                </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Heroku
+                  Animate CSS
                 </span>
               </div>
             </div>
           </div>
-          {/* Add more project cards as needed */}
         </div>
       </div>
-      <Link href="/" className="absolute bottom-4 right-4">
-        <span className="px-4 py-2  text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+      <Link href="/" className="fixed bottom-4 right-4">
+        <span className="px-4 py-2 text-[#66E0FF] rounded-full hover:underline">
           Back to home
         </span>
       </Link>

@@ -145,8 +145,8 @@ export default function Connect() {
       </div>
 
       {/* Back button at the bottom right */}
-      <Link href="/" className="absolute bottom-4 right-4">
-        <span className="px-4 py-2  text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+      <Link href="/" className="fixed bottom-4 right-4">
+        <span className="px-4 py-2 text-[#66E0FF] rounded-full hover:underline">
           Back to home
         </span>
       </Link>
