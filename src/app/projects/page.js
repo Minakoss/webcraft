@@ -33,18 +33,19 @@ export default function Projects() {
         </h1>
         <div className="space-y-8">
           {/* Example Project 1 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/grainlife.png"
               alt="Project 1"
-              className="w-1/3 rounded-lg mr-4"
+              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">Grain Life</h2>
               <p className="text-gray-400">Photo Gallery site</p>
               <a
                 href="https://grainlife.gr/"
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
@@ -59,21 +60,22 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/wordin.png"
               alt="Project 1"
-              className="w-1/3 rounded-lg mr-4"
+              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
-              <h2 className="text-xl font-semibold text-white">WordIn </h2>
+              <h2 className="text-xl font-semibold text-white">WordIn</h2>
               <p className="text-gray-400">
                 WordIn is a creative communication platform dedicated to
                 delivering clear, concise, and impactful content.
               </p>
               <a
                 href="https://wordin.netlify.app/"
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
@@ -92,11 +94,11 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/helpanimals.png"
               alt="Project 1"
-              className="w-1/3 rounded-lg mr-4"
+              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">Help-Animals</h2>
@@ -107,7 +109,8 @@ export default function Projects() {
               </p>
               <a
                 href="https://animalshelp.netlify.app/"
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
@@ -122,11 +125,11 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/companypromo.png"
               alt="Project 1"
-              className="w-1/3 rounded-lg mr-4"
+              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">
@@ -137,7 +140,8 @@ export default function Projects() {
               </p>
               <a
                 href="https://managesamplepromo.netlify.app/"
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
@@ -153,18 +157,19 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex">
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/Analog-Life.png"
               alt="Project 1"
-              className="w-1/3 rounded-lg mr-4"
+              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">Analog-Life</h2>
               <p className="text-gray-400">Photo Gallery site</p>
               <a
                 href="https://analog-life.netlify.app/"
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-400 hover:underline mt-2"
               >
                 View Project ↗
@@ -187,6 +192,7 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
       <Link href="/" className="fixed bottom-4 right-4">
         <span className="px-4 py-2 text-[#66E0FF] rounded-full hover:underline">
           Back to home
