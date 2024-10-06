@@ -18,21 +18,31 @@ export default function Home() {
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
+    // Check if the user has already seen the intro
+    const hasSeenIntro = localStorage.getItem("hasSeenIntro");
 
-    window.addEventListener("mousemove", handleMouseMove);
+    if (!hasSeenIntro) {
+      // If it's the user's first visit, show the intro
+      setIntroVisible(true);
+      const handleMouseMove = (event) => {
+        setMousePosition({ x: event.clientX, y: event.clientY });
+      };
 
-    // Αφαιρούμε το intro μετά από 1.5 δευτερόλεπτα
-    const introTimeout = setTimeout(() => {
+      window.addEventListener("mousemove", handleMouseMove);
+
+      const introTimeout = setTimeout(() => {
+        setIntroVisible(false);
+        localStorage.setItem("hasSeenIntro", "true"); // Store flag in localStorage
+      }, 1500);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        clearTimeout(introTimeout);
+      };
+    } else {
+      // Hide intro immediately if already seen
       setIntroVisible(false);
-    }, 1500);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      clearTimeout(introTimeout); // Καθαρίζουμε το timeout
-    };
+    }
   }, []);
 
   const gradientStyle = {
@@ -47,7 +57,7 @@ export default function Home() {
       {/* Intro Section */}
       {isIntroVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
-          <h1 className="text-5xl md:text-7xl font-bold text-white animate-fade">
+          <h1 className="text-6xl md:text-[8rem]  font-thin text-white animate-fade tracking-wide">
             WebCraft
           </h1>
         </div>
