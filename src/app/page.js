@@ -40,7 +40,7 @@ export default function Home() {
         clearTimeout(introTimeout);
       };
     } else {
-      // Hide intro immediately if already seen
+      // If intro has been seen, never show it again
       setIntroVisible(false);
     }
   }, []);
