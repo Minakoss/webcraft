@@ -15,6 +15,11 @@ export default function Connect() {
   // Mouse position state for the background gradient effect
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // For success and error messages
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   useEffect(() => {
     const handleMouseMove = (event) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
@@ -40,9 +45,41 @@ export default function Connect() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    // Send form data to Web3Forms
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "53eb1724-9fcc-4b94-b78b-01c0318bdde8",
+        ...formData,
+      }),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      setSuccessMessage("Your message has been sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        websiteType: "",
+        projectDetails: "",
+      });
+    } else {
+      setErrorMessage("Oops! Something went wrong. Please try again.");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -58,6 +95,12 @@ export default function Connect() {
 
       {/* Form container */}
       <div className="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg">
+        {successMessage && (
+          <p className="text-green-500 text-center mb-4">{successMessage}</p>
+        )}
+        {errorMessage && (
+          <p className="text-red-500 text-center mb-4">{errorMessage}</p>
+        )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-gray-300" htmlFor="name">
@@ -119,8 +162,10 @@ export default function Connect() {
               <option value="Business Website">Business Website</option>
               <option value="E-commerce">E-commerce</option>
               <option value="Portfolio">Portfolio</option>
-              <option>Content management</option>
-              <option>Social content/management</option>
+              <option value="Content Management">Content management</option>
+              <option value="Social Content/Management">
+                Social content/management
+              </option>
             </select>
           </div>
           <div>
@@ -140,8 +185,9 @@ export default function Connect() {
           <button
             type="submit"
             className="mt-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white font-bold py-2 px-4 rounded"
+            disabled={isSubmitting}
           >
-            Submit
+            {isSubmitting ? "Sending..." : "Submit"}
           </button>
         </form>
       </div>
