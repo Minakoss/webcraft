@@ -122,6 +122,9 @@ export default function Projects() {
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
                   Animate CSS
                 </span>
+                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
+                  Tailwind
+                </span>
               </div>
             </div>
           </div>
