@@ -196,7 +196,10 @@ export default function Projects() {
         </div>
       </div>
 
-      <Link href="/" className="fixed bottom-4 right-4">
+      <Link
+        href="/"
+        className="fixed bottom-4 left-1/2 transform -translate-x-1/2"
+      >
         <span className="px-4 py-2 text-[#66E0FF] rounded-full hover:underline">
           Back to home
         </span>

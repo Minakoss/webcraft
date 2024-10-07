@@ -193,8 +193,11 @@ export default function Connect() {
           </button>
         </form>
       </div>
-      {/* Back button at the bottom right */}
-      <Link href="/" className="fixed bottom-4 right-4">
+      {/* Back button */}
+      <Link
+        href="/"
+        className="fixed bottom-4 left-1/2 transform -translate-x-1/2"
+      >
         <span className="px-4 py-2 text-[#66E0FF] rounded-full hover:underline">
           Back to home
         </span>
