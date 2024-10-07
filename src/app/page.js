@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link"; // Import Link from next/link
 import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
+import { FaArrowDown } from "react-icons/fa";
 
 import {
   FaGithub,
@@ -72,7 +73,12 @@ export default function Home() {
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
           {/* Αριστερή στήλη */}
-          <div className="flex flex-col justify-center space-y-4 md:sticky top-0 h-screen">
+          <div className="flex flex-col justify-start space-y-4 md:sticky top-0 h-screen pt-20">
+            <img
+              src="/icons/code.png"
+              alt="WebCraft Logo"
+              className="w-32 h-32 md:w-32 md:h-32 mb-4"
+            />
             <h1 className="text-2xl md:text-4xl font-bold text-white">
               WebCraft
             </h1>
@@ -105,6 +111,7 @@ export default function Home() {
                 </li>
               </ul>
             </nav>
+
             <div className="flex space-x-4 mt-8 justify-left">
               <Link href="https://github.com/Minakoss" target="blank">
                 <FaGithub className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
@@ -118,15 +125,24 @@ export default function Home() {
               <Link href="https://instagram.com" target="blank">
                 <FaInstagram className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
-
               <Link href="https://twitter.com" target="blank">
                 <FaDiscord className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
             </div>
+
+            {/* Βελάκι για μετάβαση στη δεξιά στήλη */}
+            <div className="flex justify-center mt-auto mb-4 sm:mb-0 md:hidden absolute bottom-0 left-0 right-0">
+              <a href="#right-column" className="block">
+                <FaArrowDown className="text-gray-400 hover:text-white text-3xl animate-bounce" />
+              </a>
+            </div>
           </div>
 
           {/* Δεξιά στήλη */}
-          <div className="text-md space-y-4 mt-10 md:mt-20 overflow-y-scroll h-screen">
+          <div
+            id="right-column"
+            className="text-md space-y-4 mt-10 md:mt-20 overflow-y-scroll h-screen"
+          >
             <div className="text-gray-400">
               <h1 className="text-lg md:text-xl font-bold text-white">
                 Welcome to WebCraft
