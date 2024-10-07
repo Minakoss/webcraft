@@ -73,7 +73,13 @@ export default function Home() {
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
           {/* Αριστερή στήλη */}
-          <div className="flex flex-col justify-center space-y-4 md:sticky top-0 h-screen">
+          {/*<div className="flex flex-col justify-center space-y-4 md:sticky top-0 h-screen">*/}
+          <div className="flex flex-col justify-start space-y-4 md:sticky top-0 h-screen pt-20">
+            <img
+              src="/icons/code.png"
+              alt="WebCraft Logo"
+              className="w-32 h-32 md:w-30 md:h-30 mb-4 filter grayscale "
+            />
             <h1 className="text-2xl md:text-4xl font-bold text-white">
               WebCraft
             </h1>

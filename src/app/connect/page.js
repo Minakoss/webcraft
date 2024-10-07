@@ -87,12 +87,14 @@ export default function Connect() {
       className="min-h-screen text-light-gray p-4 md:p-8 relative"
       style={gradientStyle} // Apply the gradient background
     >
-      <h1 className="text-2xl md:text-4xl font-bold text-white">Connect</h1>
-      <p className="text-md md:text-lg text-gray-400 mb-6">
+      <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
+        Connect
+      </h1>
+
+      <p className="text-md md:text-lg text-gray-400 mb-6 text-center">
         We’d love to hear from you! Please fill out the form below to get in
         touch or to request a quote for your website project.
       </p>
-
       {/* Form container */}
       <div className="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg">
         {successMessage && (
@@ -191,7 +193,6 @@ export default function Connect() {
           </button>
         </form>
       </div>
-
       {/* Back button at the bottom right */}
       <Link href="/" className="fixed bottom-4 right-4">
         <span className="px-4 py-2 text-[#66E0FF] rounded-full hover:underline">
