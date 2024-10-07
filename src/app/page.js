@@ -18,12 +18,13 @@ export default function Home() {
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
 
   useEffect(() => {
-    // Check if the user has already seen the intro
-    const hasSeenIntro = localStorage.getItem("hasSeenIntro");
+    // Check if the user has already seen the intro in this session
+    const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
 
     if (!hasSeenIntro) {
-      // If it's the user's first visit, show the intro
+      // If it's the user's first visit in this session, show the intro
       setIntroVisible(true);
+
       const handleMouseMove = (event) => {
         setMousePosition({ x: event.clientX, y: event.clientY });
       };
@@ -32,7 +33,7 @@ export default function Home() {
 
       const introTimeout = setTimeout(() => {
         setIntroVisible(false);
-        localStorage.setItem("hasSeenIntro", "true"); // Store flag in localStorage
+        sessionStorage.setItem("hasSeenIntro", "true"); // Store flag in sessionStorage
       }, 1500);
 
       return () => {
@@ -40,11 +41,10 @@ export default function Home() {
         clearTimeout(introTimeout);
       };
     } else {
-      // If intro has been seen, never show it again
+      // If intro has been seen, do not show it again for this session
       setIntroVisible(false);
     }
   }, []);
-
   const gradientStyle = {
     background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
