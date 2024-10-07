@@ -80,6 +80,7 @@ export default function Home() {
               alt="WebCraft Logo"
               className="w-32 h-32 md:w-30 md:h-30 mb-4 filter grayscale "
             />
+
             <h1 className="text-2xl md:text-4xl font-bold text-white">
               WebCraft
             </h1>
