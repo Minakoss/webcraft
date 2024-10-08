@@ -1,11 +1,9 @@
 "use client"; // Ensure the code runs on the client-side
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link"; // Import Link from next/link
 import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
-import { FaArrowDown } from "react-icons/fa";
-
 import {
   FaGithub,
   FaLinkedin,
@@ -13,11 +11,13 @@ import {
   FaInstagram,
   FaTwitter,
   FaDiscord,
+  FaArrowDown,
 } from "react-icons/fa";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
+  const rightColumnRef = useRef(null); // Reference for the right column
 
   useEffect(() => {
     // Check if the user has already seen the intro in this session
@@ -47,6 +47,14 @@ export default function Home() {
       setIntroVisible(false);
     }
   }, []);
+
+  // Function to handle the scroll to the right column
+  const scrollToRightColumn = () => {
+    if (rightColumnRef.current) {
+      rightColumnRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const gradientStyle = {
     background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
@@ -73,7 +81,6 @@ export default function Home() {
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
           {/* Αριστερή στήλη */}
-          {/*<div className="flex flex-col justify-center space-y-4 md:sticky top-0 h-screen">*/}
           <div className="flex flex-col justify-start space-y-4 md:sticky top-0 h-screen pt-20">
             <img
               src="/icons/code.png"
@@ -134,7 +141,7 @@ export default function Home() {
 
             {/* Βελάκι για μετάβαση στη δεξιά στήλη */}
             <div className="flex justify-center mt-auto mb-4 sm:mb-0 md:hidden absolute bottom-0 left-0 right-0">
-              <a href="#right-column" className="block">
+              <a onClick={scrollToRightColumn} className="block cursor-pointer">
                 <FaArrowDown className="text-gray-400 hover:text-white text-3xl animate-bounce" />
               </a>
             </div>
@@ -143,6 +150,7 @@ export default function Home() {
           {/* Δεξιά στήλη */}
           <div
             id="right-column"
+            ref={rightColumnRef}
             className="text-md space-y-4 mt-10 md:mt-20 overflow-y-scroll h-screen"
           >
             <div className="text-gray-400">
