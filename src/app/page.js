@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link"; // Import Link from next/link
+import { useRouter } from "next/navigation"; // Correct import for App Router
 import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
 import {
@@ -18,6 +19,7 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
   const rightColumnRef = useRef(null); // Reference for the right column
+  const router = useRouter(); // Use next/navigation's useRouter
 
   useEffect(() => {
     // Check if the user has already seen the intro in this session
@@ -48,7 +50,16 @@ export default function Home() {
     }
   }, []);
 
-  // Function to handle the scroll to the right column
+  // Function to handle the smooth scroll transition
+  const handleSmoothTransition = (e, path) => {
+    e.preventDefault();
+    document.documentElement.style.scrollBehavior = "smooth"; // Apply smooth scroll
+    setTimeout(() => {
+      router.push(path); // Navigate to the new page after a slight delay
+    }, 200); // Delay for smooth effect
+  };
+
+  // Function to scroll to the right column
   const scrollToRightColumn = () => {
     if (rightColumnRef.current) {
       rightColumnRef.current.scrollIntoView({ behavior: "smooth" });
@@ -85,7 +96,7 @@ export default function Home() {
             <img
               src="/icons/code.png"
               alt="WebCraft Logo"
-              className="w-32 h-32 md:w-30 md:h-30 mb-4 filter grayscale "
+              className="w-32 h-32 md:w-30 md:h-30 mb-4 filter grayscale"
             />
 
             <h1 className="text-2xl md:text-4xl font-bold text-white">
@@ -102,20 +113,26 @@ export default function Home() {
             <nav className="mt-4 md:mt-8">
               <ul className="space-y-6">
                 <li className="group text-md font-medium text-gray-400 hover:text-white cursor-pointer">
-                  <Link href="/projects">
+                  <a
+                    href="/projects"
+                    onClick={(e) => handleSmoothTransition(e, "/projects")}
+                  >
                     <span className="relative">
                       Projects
                       <span className="absolute left-0 bottom-0 w-full h-[1px] bg-gray-400 opacity-0 group-hover:opacity-100 group-hover:h-[2px] transition-all duration-300"></span>
                     </span>
-                  </Link>
+                  </a>
                 </li>
                 <li className="group text-md font-medium text-gray-400 hover:text-white cursor-pointer">
-                  <Link href="/connect">
+                  <a
+                    href="/connect"
+                    onClick={(e) => handleSmoothTransition(e, "/connect")}
+                  >
                     <span className="relative">
                       Connect
                       <span className="absolute left-0 bottom-0 w-full h-[1px] bg-gray-400 opacity-0 group-hover:opacity-100 group-hover:h-[2px] transition-all duration-300"></span>
                     </span>
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </nav>
