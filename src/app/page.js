@@ -95,8 +95,7 @@ export default function Home() {
               front-end developer Services
             </h2>
             <p className="text-md text-gray-400">
-              I build pixel-perfect, engaging, and accessible digital
-              experiences.
+              Building perfect, engaging, and accessible digital experiences.
             </p>
 
             {/* Μενού πλοήγησης */}
