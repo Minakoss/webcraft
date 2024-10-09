@@ -1,10 +1,11 @@
-"use client"; // Προσθέτουμε αυτό για να το κάνουμε Client Component
+"use client"; // Κάνουμε το component client-side
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Projects() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false); // State για fade-in
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -13,18 +14,27 @@ export default function Projects() {
 
     window.addEventListener("mousemove", handleMouseMove);
 
+    // Ενεργοποίηση του fade-in όταν φορτώνει η σελίδα
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // Μικρή καθυστέρηση
+
+    // Καθαρισμός του event listener
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
+  // Ορισμός του στυλ για το gradient
   const gradientStyle = {
     background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
 
   return (
     <div
-      className="min-h-screen text-light-gray p-4 md:p-8"
+      className={`min-h-screen text-light-gray p-4 md:p-8 transition-opacity duration-1000 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`} // Προσθήκη fade-in
       style={gradientStyle}
     >
       <div className="container mx-auto">
@@ -60,6 +70,8 @@ export default function Projects() {
               </div>
             </div>
           </div>
+
+          {/* Example Project 2 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/wordin.png"
@@ -94,6 +106,7 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Example Project 3 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/helpanimals.png"
@@ -128,6 +141,8 @@ export default function Projects() {
               </div>
             </div>
           </div>
+
+          {/* Example Project 4 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/companypromo.png"
@@ -160,6 +175,7 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Example Project 5 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/Analog-Life.png"
@@ -185,17 +201,13 @@ export default function Projects() {
                   React
                 </span>
                 <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Bootstrap
-                </span>
-                <span className="px-3 py-1 bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md">
-                  Animate CSS
+                  Tailwind
                 </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <Link
         href="/"
         className="fixed bottom-4 left-1/2 transform -translate-x-1/2"

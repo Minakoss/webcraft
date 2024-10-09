@@ -15,6 +15,9 @@ export default function Connect() {
   // Mouse position state for the background gradient effect
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // State for fade-in effect
+  const [isVisible, setIsVisible] = useState(false);
+
   // For success and error messages
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
@@ -26,6 +29,11 @@ export default function Connect() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+
+    // Enable the fade-in effect after a short delay
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -84,7 +92,9 @@ export default function Connect() {
 
   return (
     <div
-      className="min-h-screen text-light-gray p-4 md:p-8 relative"
+      className={`min-h-screen text-light-gray p-4 md:p-8 relative transition-opacity duration-1000 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`} // Add fade-in effect
       style={gradientStyle} // Apply the gradient background
     >
       <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
@@ -95,6 +105,7 @@ export default function Connect() {
         We’d love to hear from you! Please fill out the form below to get in
         touch or to request a quote for your website project.
       </p>
+
       {/* Form container */}
       <div className="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg">
         {successMessage && (

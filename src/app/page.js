@@ -5,6 +5,7 @@ import Link from "next/link"; // Import Link from next/link
 import { useRouter } from "next/navigation"; // Correct import for App Router
 import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
+
 import {
   FaGithub,
   FaLinkedin,
@@ -18,6 +19,7 @@ import {
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
+  const [isFading, setIsFading] = useState(false); // State για το fade effect
   const rightColumnRef = useRef(null); // Reference for the right column
   const router = useRouter(); // Use next/navigation's useRouter
 
@@ -50,13 +52,15 @@ export default function Home() {
     }
   }, []);
 
-  // Function to handle the smooth scroll transition
+  // Function to handle the smooth scroll transition with fade effects
   const handleSmoothTransition = (e, path) => {
     e.preventDefault();
-    document.documentElement.style.scrollBehavior = "smooth"; // Apply smooth scroll
+    setIsFading(true); // Trigger fade-out
+
     setTimeout(() => {
-      router.push(path); // Navigate to the new page after a slight delay
-    }, 200); // Delay for smooth effect
+      router.push(path); // Navigate to the new page after the fade-out
+      setIsFading(false); // Reset fading state
+    }, 300); // Duration of the fade-out effect
   };
 
   // Function to scroll to the right column
@@ -72,7 +76,9 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen text-light-gray p-4 md:p-8"
+      className={`min-h-screen text-light-gray p-4 md:p-8 transition-opacity duration-500 ${
+        isFading ? "opacity-0" : "opacity-100"
+      }`} // Apply fade-in/fade-out class based on isFading state
       style={gradientStyle}
     >
       {/* Intro Section */}
