@@ -75,12 +75,7 @@ export default function Home() {
   };
 
   return (
-    <div
-      className={`min-h-screen text-light-gray p-4 md:p-8 transition-opacity duration-500 ${
-        isFading ? "opacity-0" : "opacity-100"
-      }`} // Apply fade-in/fade-out class based on isFading state
-      style={gradientStyle}
-    >
+    <div>
       {/* Intro Section */}
       {isIntroVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
