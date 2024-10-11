@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link"; // Import Link from next/link
 import { useRouter } from "next/navigation"; // Correct import for App Router
 import Footer from "./components/Footer"; // Import Footer
-import Head from "next/head";
 
 import {
   FaGithub,
@@ -71,11 +70,11 @@ export default function Home() {
   };
 
   const gradientStyle = {
-    background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
+    background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 0.9) 50%), #0A192F`,
   };
 
   return (
-    <div>
+    <div style={gradientStyle}>
       {/* Intro Section */}
       {isIntroVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
