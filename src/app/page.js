@@ -147,13 +147,13 @@ export default function Home() {
         <div className="absolute top-4 right-4 flex space-x-4">
           <button
             onClick={() => handleLanguageChange("en")}
-            className={`text-white ${language === "en" ? "underline" : ""}`}
+            className={`text-gray-400 ${language === "en" ? "underline" : ""}`}
           >
             EN
           </button>
           <button
             onClick={() => handleLanguageChange("gr")}
-            className={`text-white ${language === "gr" ? "underline" : ""}`}
+            className={`text-gray-400 ${language === "gr" ? "underline" : ""}`}
           >
             GR
           </button>
