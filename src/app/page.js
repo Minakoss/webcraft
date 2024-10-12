@@ -18,8 +18,12 @@ import {
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
+  const [language, setLanguage] = useState("en");
   const rightColumnRef = useRef(null); // Reference for the right column
   const router = useRouter(); // Use next/navigation's useRouter
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+  };
 
   useEffect(() => {
     // Check if the user has already seen the intro in this session
@@ -66,7 +70,61 @@ export default function Home() {
   const gradientStyle = {
     background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
+  const content = {
+    en: {
+      title: "WebBlend",
+      subtitle: "Front-end Developer Services",
+      description:
+        "Building perfect, engaging, and accessible digital experiences.",
+      welcomeTitle: "Welcome to WebBlend",
+      welcomeDescription:
+        "At WebBlend, we bring your digital ideas to life through modern, innovative, and beautifully crafted websites and applications. Our team of expert developers and designers specializes in creating high-performance, user-friendly web solutions that are not only functional but visually captivating.",
+      description1:
+        "We believe that design is more than just aesthetics—it’s about creating seamless and engaging user experiences that connect with audiences on every device. Whether you need a dynamic website, an interactive web application, or a bespoke digital solution, we combine cutting-edge technology with the latest design trends to deliver products that stand out. Explore our portfolio of pixel-perfect projects and let us help you build the future of your digital presence.",
+      servicesTitle: "Services We Offer:",
+      services: [
+        "Custom website development",
+        "Web and mobile application design",
+        "UI/UX design and consultation",
+        "Responsive design for all devices",
+        "E-commerce solutions",
+        "Content management systems",
+        "Social content/management",
+      ],
+      title1:
+        "Let WebBlend transform your vision into reality. Together, we can build something remarkable.",
+      description2:
+        "This text positions your brand as a forward-thinking developer of modern websites and applications with an emphasis on high-quality design. Feel free to adjust it to match your brand’s tone or specific services!",
+    },
+    gr: {
+      title: "WebBlend",
+      subtitle: "Υπηρεσίες Front-end Developer",
+      description:
+        "Δημιουργούμε τέλειες, ελκυστικές και προσβάσιμες ψηφιακές εμπειρίες.",
+      welcomeTitle: "WebBlend",
+      welcomeDescription:
+        "Στην WebBlend, ζωντανεύουμε τις ψηφιακές σας ιδέες μέσω σύγχρονων, καινοτόμων ιστοσελίδων Η ομάδα μας ειδικεύεται στη δημιουργία λύσεων υψηλής απόδοσης, φιλικές προς το χρήστη που δεν είναι μόνο λειτουργικές αλλά και οπτικά σαγηνευτικές.",
+      description1:
+        "Πιστεύουμε ότι η σχεδίαση είναι κάτι περισσότερο από απλή αισθητική - έχει να κάνει με τη δημιουργία απρόσκοπτων και ελκυστικών εμπειριών χρήστη που συνδέονται με το κοινό σε κάθε συσκευή. Είτε χρειάζεστε έναν δυναμικό ιστότοπο, μια διαδραστική εφαρμογή Ιστού ή μια προσαρμοσμένη ψηφιακή λύση, συνδυάζουμε την αιχμή τεχνολογία με τις πιο πρόσφατες τάσεις σχεδιασμού για την παράδοση προϊόντων που ξεχωρίζουν.",
+      servicesTitle: "Υπηρεσίες που Προσφέρουμε:",
+      services: [
+        "Εξατομικευμένη ανάπτυξη ιστοσελίδων",
+        "Σχεδιασμός ιστοσελίδων και εφαρμογών για κινητά",
+        "Σχεδιασμός UI/UX και συμβουλευτική",
+        "Responsive σχεδιασμός για όλες τις συσκευές",
+        "Λύσεις E-commerce",
+        "Συστήματα διαχείρισης περιεχομένου",
+        "Διαχείριση κοινωνικών δικτύων",
+      ],
+      title1:
+        "Αφήστε το WebBlend να μεταμορφώσει το όραμά σας σε πραγματικότητα.",
 
+      description2:
+        "This text positions your brand as a forward-thinking developer of modern websites and applications with an emphasis on high-quality design. Feel free to adjust it to match your brand’s tone or specific services!",
+    },
+  };
+
+  const currentContent = content[language];
   return (
     <div
       className="min-h-screen text-light-gray p-4 md:p-8"
@@ -86,6 +144,20 @@ export default function Home() {
           isIntroVisible ? "opacity-0" : "opacity-100"
         }`}
       >
+        <div className="absolute top-4 right-4 flex space-x-4">
+          <button
+            onClick={() => handleLanguageChange("en")}
+            className={`text-white ${language === "en" ? "underline" : ""}`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => handleLanguageChange("gr")}
+            className={`text-white ${language === "gr" ? "underline" : ""}`}
+          >
+            GR
+          </button>
+        </div>
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
           {/* Αριστερή στήλη */}
@@ -97,13 +169,13 @@ export default function Home() {
             />
 
             <h1 className="text-2xl md:text-4xl font-bold text-white">
-              WebBlend
+              {currentContent.title}
             </h1>
             <h2 className="text-md md:text-xl font-medium text-gray-300">
-              front-end developer Services
+              {currentContent.subtitle}
             </h2>
             <p className="text-md text-gray-400">
-              Building perfect, engaging, and accessible digital experiences.
+              {currentContent.description}
             </p>
 
             {/* Μενού πλοήγησης */}
@@ -168,50 +240,25 @@ export default function Home() {
           >
             <div className="text-gray-400">
               <h1 className="text-lg md:text-xl font-bold text-white">
-                Welcome to WebBlend
+                {currentContent.welcomeTitle}
               </h1>
-              <p>
-                At WebBlend, we bring your digital ideas to life through modern,
-                innovative, and beautifully crafted websites and applications.
-                Our team of expert developers and designers specializes in
-                creating high-performance, user-friendly web solutions that are
-                not only functional but visually captivating.
-              </p>
+              <p>{currentContent.welcomeDescription}</p>
             </div>
-            <p className="text-gray-400">
-              We believe that design is more than just aesthetics—it’s about
-              creating seamless and engaging user experiences that connect with
-              audiences on every device. Whether you need a dynamic website, an
-              interactive web application, or a bespoke digital solution, we
-              combine cutting-edge technology with the latest design trends to
-              deliver products that stand out. Explore our portfolio of
-              pixel-perfect projects and let us help you build the future of
-              your digital presence.
-            </p>
+            <p className="text-gray-400">{currentContent.description1}</p>
             <div className="text-gray-400">
-              <h3 className="text-lg text-white">Services We Offer:</h3>
+              <h3 className="text-lg text-white">
+                {currentContent.servicesTitle}
+              </h3>
               <ul className="list-disc ml-4 md:ml-6">
-                <li>Custom website development</li>
-                <li>Web and mobile application design</li>
-                <li>UI/UX design and consultation</li>
-                <li>Responsive design for all devices</li>
-                <li>E-commerce solutions</li>
-                <li>Content management systems</li>
-                <li>Social content/management</li>
+                {currentContent.services.map((service, index) => (
+                  <li key={index}>{service}</li>
+                ))}
               </ul>
             </div>
 
             <div className="mt-6 md:mt-8">
-              <h3 className="text-lg text-white">
-                Let WebBlend transform your vision into reality. Together, we
-                can build something remarkable.
-              </h3>
-              <p className="text-gray-400">
-                This text positions your brand as a forward-thinking developer
-                of modern websites and applications with an emphasis on
-                high-quality design. Feel free to adjust it to match your
-                brand’s tone or specific services!
-              </p>
+              <h3 className="text-lg text-white">{currentContent.title1}</h3>
+              <p className="text-gray-400">{currentContent.description2}</p>
 
               {/* Τεχνολογίες */}
               <div className="flex flex-wrap space-x-2 md:space-x-2 mt-4">
