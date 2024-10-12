@@ -24,16 +24,13 @@ export default function Home() {
   useEffect(() => {
     // Check if the user has already seen the intro in this session
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
-
+    const handleMouseMove = (event) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
     if (!hasSeenIntro) {
       // If it's the user's first visit in this session, show the intro
       setIntroVisible(true);
-
-      const handleMouseMove = (event) => {
-        setMousePosition({ x: event.clientX, y: event.clientY });
-      };
-
-      window.addEventListener("mousemove", handleMouseMove);
 
       const introTimeout = setTimeout(() => {
         setIntroVisible(false);
