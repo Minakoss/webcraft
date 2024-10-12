@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link"; // Import Link from next/link
 import { useRouter } from "next/navigation"; // Correct import for App Router
 import Footer from "./components/Footer"; // Import Footer
-
+import Head from "next/head";
 import {
   FaGithub,
   FaLinkedin,
@@ -18,7 +18,6 @@ import {
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
-  const [isFading, setIsFading] = useState(false); // State για το fade effect
   const rightColumnRef = useRef(null); // Reference for the right column
   const router = useRouter(); // Use next/navigation's useRouter
 
@@ -51,15 +50,13 @@ export default function Home() {
     }
   }, []);
 
-  // Function to handle the smooth scroll transition with fade effects
+  // Function to handle the smooth scroll transition
   const handleSmoothTransition = (e, path) => {
     e.preventDefault();
-    setIsFading(true); // Trigger fade-out
-
+    document.documentElement.style.scrollBehavior = "smooth"; // Apply smooth scroll
     setTimeout(() => {
-      router.push(path); // Navigate to the new page after the fade-out
-      setIsFading(false); // Reset fading state
-    }, 300); // Duration of the fade-out effect
+      router.push(path); // Navigate to the new page after a slight delay
+    }, 200); // Delay for smooth effect
   };
 
   // Function to scroll to the right column
@@ -70,11 +67,14 @@ export default function Home() {
   };
 
   const gradientStyle = {
-    background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 0.9) 50%), #0A192F`,
+    background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
 
   return (
-    <div style={gradientStyle}>
+    <div
+      className="min-h-screen text-light-gray p-4 md:p-8"
+      style={gradientStyle}
+    >
       {/* Intro Section */}
       {isIntroVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
