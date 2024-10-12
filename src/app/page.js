@@ -76,7 +76,7 @@ export default function Home() {
       {isIntroVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
           <h1 className="text-6xl md:text-[8rem]  font-thin text-white animate-fade tracking-wide">
-            WebCraft
+            WebBlend
           </h1>
         </div>
       )}
@@ -97,7 +97,7 @@ export default function Home() {
             />
 
             <h1 className="text-2xl md:text-4xl font-bold text-white">
-              WebCraft
+              WebBlend
             </h1>
             <h2 className="text-md md:text-xl font-medium text-gray-300">
               front-end developer Services
@@ -168,10 +168,10 @@ export default function Home() {
           >
             <div className="text-gray-400">
               <h1 className="text-lg md:text-xl font-bold text-white">
-                Welcome to WebCraft
+                Welcome to WebBlend
               </h1>
               <p>
-                At WebCraft, we bring your digital ideas to life through modern,
+                At WebBlend, we bring your digital ideas to life through modern,
                 innovative, and beautifully crafted websites and applications.
                 Our team of expert developers and designers specializes in
                 creating high-performance, user-friendly web solutions that are
@@ -203,7 +203,7 @@ export default function Home() {
 
             <div className="mt-6 md:mt-8">
               <h3 className="text-lg text-white">
-                Let WebCraft transform your vision into reality. Together, we
+                Let WebBlend transform your vision into reality. Together, we
                 can build something remarkable.
               </h3>
               <p className="text-gray-400">

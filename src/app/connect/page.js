@@ -98,7 +98,7 @@ export default function Connect() {
       style={gradientStyle} // Apply the gradient background
     >
       <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
-        Connect
+        WebBlend Connect
       </h1>
 
       <p className="text-md md:text-lg text-gray-400 mb-6 text-center">

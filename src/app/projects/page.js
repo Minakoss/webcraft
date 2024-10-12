@@ -39,7 +39,7 @@ export default function Projects() {
     >
       <div className="container mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
-          WebCraft Projects
+          WebBlend Projects
         </h1>
         <div className="space-y-8">
           {/* Example Project 1 */}
