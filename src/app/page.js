@@ -5,6 +5,7 @@ import Link from "next/link"; // Import Link from next/link
 import { useRouter } from "next/navigation"; // Correct import for App Router
 import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
+import { FaGlobe } from "react-icons/fa";
 import {
   FaGithub,
   FaLinkedin,
@@ -18,13 +19,15 @@ import {
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isIntroVisible, setIntroVisible] = useState(true); // State για το intro
-  const [language, setLanguage] = useState("en");
+
   const rightColumnRef = useRef(null); // Reference for the right column
   const router = useRouter(); // Use next/navigation's useRouter
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-  };
 
+  const [language, setLanguage] = useState("en"); // Default language: English
+  // Εναλλαγή γλώσσας
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === "en" ? "gr" : "en"));
+  };
   useEffect(() => {
     // Check if the user has already seen the intro in this session
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
@@ -125,6 +128,7 @@ export default function Home() {
   };
 
   const currentContent = content[language];
+
   return (
     <div
       className="min-h-screen text-light-gray p-4 md:p-8"
@@ -145,17 +149,8 @@ export default function Home() {
         }`}
       >
         <div className="absolute top-4 right-4 flex space-x-4">
-          <button
-            onClick={() => handleLanguageChange("en")}
-            className={`text-gray-400 ${language === "en" ? "underline" : ""}`}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => handleLanguageChange("gr")}
-            className={`text-gray-400 ${language === "gr" ? "underline" : ""}`}
-          >
-            GR
+          <button onClick={toggleLanguage}>
+            <FaGlobe className="text-xl text-gray-400" />
           </button>
         </div>
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
