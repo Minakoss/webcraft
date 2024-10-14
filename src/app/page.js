@@ -151,6 +151,7 @@ export default function Home() {
         }`}
       >
         <Header />
+
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
           {/* Αριστερή στήλη */}
