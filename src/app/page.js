@@ -46,7 +46,7 @@ export default function Home() {
       const introTimeout = setTimeout(() => {
         setIntroVisible(false);
         sessionStorage.setItem("hasSeenIntro", "true"); // Store flag in sessionStorage
-      }, 1500);
+      }, 2500);
 
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
@@ -138,8 +138,8 @@ export default function Home() {
     >
       {/* Intro Section */}
       {isIntroVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade ">
-          <h1 className="text-6xl md:text-[8rem] font-thin text-white tracking-wide neon-effect">
+        <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
+          <h1 className="text-6xl md:text-[8rem] font-thin tracking-wide neon-effect text-transparent outline-text">
             WebBlend
           </h1>
         </div>

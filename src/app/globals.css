@@ -26,16 +26,32 @@ body {
   }
 }
 
-@keyframes neonGlow {
-  0%,
-  100% {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+@keyframes pixel-fade {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
   }
-  50% {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 1);
+  100% {
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
+.animate-pixel-fade {
+  animation: pixel-fade 1.5s ease-in-out;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.bg-[#0A192F] {
+  background-color: #0a192f;
+}
+
 .neon-effect {
-  animation: neonGlow 2s infinite;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.3);
 }
