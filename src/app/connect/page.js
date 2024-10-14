@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link"; // Import Link from next/link
+import Header from "../components/Header";
 
 export default function Connect() {
   const [formData, setFormData] = useState({
@@ -97,6 +98,7 @@ export default function Connect() {
       }`} // Add fade-in effect
       style={gradientStyle} // Apply the gradient background
     >
+      <Header />
       <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
         WebBlend Connect
       </h1>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Header from "../components/Header";
 
 export default function Projects() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -37,6 +38,7 @@ export default function Projects() {
       }`} // Προσθήκη fade-in
       style={gradientStyle}
     >
+      <Header />
       <div className="container mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
           WebBlend Projects

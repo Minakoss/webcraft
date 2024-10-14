@@ -7,6 +7,7 @@ import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
 import { FaGlobe } from "react-icons/fa";
 import { FiLogIn, FiUserPlus } from "react-icons/fi"; // Εισαγωγή εικονιδίων για login και register
+import Header from "./components/Header";
 
 import {
   FaGithub,
@@ -30,6 +31,7 @@ export default function Home() {
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "en" ? "gr" : "en"));
   };
+
   useEffect(() => {
     // Check if the user has already seen the intro in this session
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
@@ -148,11 +150,7 @@ export default function Home() {
           isIntroVisible ? "opacity-0" : "opacity-100"
         }`}
       >
-        <div className="absolute top-4 right-4 flex space-x-4">
-          <button onClick={toggleLanguage}>
-            <FaGlobe className="text-xl text-gray-400" />
-          </button>
-        </div>
+        <Header />
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
           {/* Αριστερή στήλη */}
