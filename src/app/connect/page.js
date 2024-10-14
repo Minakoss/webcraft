@@ -104,8 +104,8 @@ export default function Connect() {
       </h1>
 
       <p className="text-md md:text-lg text-gray-400 mb-6 text-center mt-4 md:mt-0">
-        We’d love to hear from you! Please fill out the form below to get in
-        touch or to request a quote for your website project.
+        Please fill out the form below to get in touch or to request a quote for
+        your website project.
       </p>
 
       {/* Form container */}
