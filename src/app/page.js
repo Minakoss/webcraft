@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation"; // Correct import for App Router
 import Footer from "./components/Footer"; // Import Footer
 import Head from "next/head";
 import { FaGlobe } from "react-icons/fa";
+import { FiLogIn, FiUserPlus } from "react-icons/fi"; // Εισαγωγή εικονιδίων για login και register
+
 import {
   FaGithub,
   FaLinkedin,
@@ -90,7 +92,6 @@ export default function Home() {
         "Web and mobile application design",
         "UI/UX design and consultation",
         "Responsive design for all devices",
-        "E-commerce solutions",
         "Content management systems",
         "Social content/management",
       ],
@@ -115,7 +116,6 @@ export default function Home() {
         "Σχεδιασμός ιστοσελίδων και εφαρμογών για κινητά",
         "Σχεδιασμός UI/UX και συμβουλευτική",
         "Responsive σχεδιασμός για όλες τις συσκευές",
-        "Λύσεις E-commerce",
         "Συστήματα διαχείρισης περιεχομένου",
         "Διαχείριση κοινωνικών δικτύων",
       ],
