@@ -99,11 +99,11 @@ export default function Connect() {
       style={gradientStyle} // Apply the gradient background
     >
       <Header />
-      <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
+      <h1 className="text-3xl md:text-4xl font-bold text-white text-center mt-8 md:mt-0">
         WebBlend Connect
       </h1>
 
-      <p className="text-md md:text-lg text-gray-400 mb-6 text-center">
+      <p className="text-md md:text-lg text-gray-400 mb-6 text-center mt-4 md:mt-0">
         We’d love to hear from you! Please fill out the form below to get in
         touch or to request a quote for your website project.
       </p>
