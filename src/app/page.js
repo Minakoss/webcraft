@@ -152,17 +152,17 @@ export default function Home() {
       >
         <div className="absolute top-4 right-4 flex space-x-4">
           {/* Login Icon */}
-          <button onClick={() => router.push("/login")}>
+          <button onClick={() => router.push("/login")} title="Login">
             <FiLogIn className="text-xl text-gray-400" />
           </button>
 
           {/* Register Icon */}
-          <button onClick={() => router.push("/register")}>
+          <button onClick={() => router.push("/register")} title="Register">
             <FiUserPlus className="text-xl text-gray-400" />
           </button>
 
           {/* Language Toggle */}
-          <button onClick={toggleLanguage}>
+          <button onClick={toggleLanguage} title="Lang">
             <FaGlobe className="text-xl text-gray-400" />
           </button>
         </div>
@@ -216,19 +216,31 @@ export default function Home() {
             </nav>
 
             <div className="flex space-x-4 mt-8 justify-left">
-              <Link href="https://github.com/Minakoss" target="blank">
+              <Link
+                href="https://github.com/Minakoss"
+                target="blank"
+                title="Github"
+              >
                 <FaGithub className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
-              <Link href="https://linkedin.com" target="blank">
+              <Link href="https://linkedin.com" target="blank" title="Linkedin">
                 <FaLinkedin className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
-              <Link href="https://codepen.io/Minakoss" target="blank">
+              <Link
+                href="https://codepen.io/Minakoss"
+                target="blank"
+                title="codepen"
+              >
                 <FaCodepen className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
-              <Link href="https://instagram.com" target="blank">
+              <Link
+                href="https://instagram.com"
+                target="blank"
+                title="Instagram"
+              >
                 <FaInstagram className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
-              <Link href="https://twitter.com" target="blank">
+              <Link href="https://discord.com/" target="blank" title="Discord">
                 <FaDiscord className="text-gray-400 hover:text-white text-2xl cursor-pointer transition-colors duration-300" />
               </Link>
             </div>
