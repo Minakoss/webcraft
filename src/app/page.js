@@ -150,7 +150,22 @@ export default function Home() {
           isIntroVisible ? "opacity-0" : "opacity-100"
         }`}
       >
-        <Header />
+        <div className="absolute top-4 right-4 flex space-x-4">
+          {/* Login Icon */}
+          <button onClick={() => router.push("/login")}>
+            <FiLogIn className="text-xl text-gray-400" />
+          </button>
+
+          {/* Register Icon */}
+          <button onClick={() => router.push("/register")}>
+            <FiUserPlus className="text-xl text-gray-400" />
+          </button>
+
+          {/* Language Toggle */}
+          <button onClick={toggleLanguage}>
+            <FaGlobe className="text-xl text-gray-400" />
+          </button>
+        </div>
 
         {/* Εδώ ξεκινάει το περιεχόμενο της σελίδας */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 container mx-auto">
