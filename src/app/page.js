@@ -46,7 +46,7 @@ export default function Home() {
       const introTimeout = setTimeout(() => {
         setIntroVisible(false);
         sessionStorage.setItem("hasSeenIntro", "true"); // Store flag in sessionStorage
-      }, 2500);
+      }, 3000);
 
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
@@ -77,6 +77,7 @@ export default function Home() {
   const gradientStyle = {
     background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.002), rgba(10, 25, 47, 1) 50%), rgba(10, 25, 47, 0.9)`,
   };
+
   const content = {
     en: {
       title: "WebBlend",
@@ -109,7 +110,7 @@ export default function Home() {
         "Δημιουργούμε τέλειες, ελκυστικές και προσβάσιμες ψηφιακές εμπειρίες.",
       welcomeTitle: "WebBlend",
       welcomeDescription:
-        "Στην WebBlend, ζωντανεύουμε τις ψηφιακές σας ιδέες μέσω σύγχρονων, καινοτόμων ιστοσελίδων Η ομάδα μας ειδικεύεται στη δημιουργία λύσεων υψηλής απόδοσης, φιλικές προς το χρήστη που δεν είναι μόνο λειτουργικές αλλά και οπτικά σαγηνευτικές.",
+        "Στην WebBlend, ζωντανεύουμε τις ψηφιακές σας ιδέες μέσω σύγχρονων, καινοτόμων ιστοσελίδων. Η ομάδα μας ειδικεύεται στη δημιουργία λύσεων υψηλής απόδοσης, φιλικές προς το χρήστη που δεν είναι μόνο λειτουργικές αλλά και οπτικά σαγηνευτικές.",
       description1:
         "Πιστεύουμε ότι η σχεδίαση είναι κάτι περισσότερο από απλή αισθητική - έχει να κάνει με τη δημιουργία απρόσκοπτων και ελκυστικών εμπειριών χρήστη που συνδέονται με το κοινό σε κάθε συσκευή. Είτε χρειάζεστε έναν δυναμικό ιστότοπο, μια διαδραστική εφαρμογή Ιστού ή μια προσαρμοσμένη ψηφιακή λύση, συνδυάζουμε την αιχμή τεχνολογία με τις πιο πρόσφατες τάσεις σχεδιασμού για την παράδοση προϊόντων που ξεχωρίζουν.",
       servicesTitle: "Υπηρεσίες που Προσφέρουμε:",
@@ -123,13 +124,25 @@ export default function Home() {
       ],
       title1:
         "Αφήστε το WebBlend να μεταμορφώσει το όραμά σας σε πραγματικότητα.",
-
       description2:
         "This text positions your brand as a forward-thinking developer of modern websites and applications with an emphasis on high-quality design. Feel free to adjust it to match your brand’s tone or specific services!",
     },
   };
 
   const currentContent = content[language];
+
+  // Function to render each letter of the title one by one
+  const renderTitle = (title) => {
+    return title.split("").map((letter, index) => (
+      <span
+        key={index}
+        className="inline-block opacity-0 animate-fade-in"
+        style={{ animationDelay: `${index * 0.35}s` }} // Delay animation for each letter
+      >
+        {letter}
+      </span>
+    ));
+  };
 
   return (
     <div
@@ -138,9 +151,9 @@ export default function Home() {
     >
       {/* Intro Section */}
       {isIntroVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50 animate-pixel-fade">
-          <h1 className="text-6xl md:text-[8rem] font-thin tracking-wide neon-effect text-transparent outline-text">
-            WebBlend
+        <div className="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50">
+          <h1 className="text-6xl md:text-[8rem] font-thin tracking-wide neon-effect">
+            {renderTitle("WebBlend")}
           </h1>
         </div>
       )}
