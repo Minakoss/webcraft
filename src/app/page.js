@@ -101,7 +101,7 @@ export default function Home() {
       title1:
         "Let WebBlend transform your vision into reality. Together, we can build something remarkable.",
       description2:
-        "This text positions your brand as a forward-thinking developer of modern websites and applications with an emphasis on high-quality design. Feel free to adjust it to match your brand’s tone or specific services!",
+        "At WebBlend, we’re not just developers; we’re your partners in creating impactful digital experiences. Our services go beyond the basics, focusing on delivering solutions that are innovative, scalable, and tailored to meet the unique needs of your business. We believe in crafting digital products that tell your story and engage your audience, leaving a lasting impression.",
     },
     gr: {
       title: "WebBlend",
@@ -123,9 +123,9 @@ export default function Home() {
         "Διαχείριση κοινωνικών δικτύων",
       ],
       title1:
-        "Αφήστε το WebBlend να μεταμορφώσει το όραμά σας σε πραγματικότητα.",
+        "Αφήστε τη WebBlend να μεταμορφώσει το όραμά σας σε πραγματικότητα.",
       description2:
-        "This text positions your brand as a forward-thinking developer of modern websites and applications with an emphasis on high-quality design. Feel free to adjust it to match your brand’s tone or specific services!",
+        "Στη WebBlend, δεν είμαστε απλώς προγραμματιστές. είμαστε οι συνεργάτες σας στη δημιουργία εντυπωσιακών ψηφιακών εμπειριών. Οι υπηρεσίες μας υπερβαίνουν τα βασικά, εστιάζοντας στην παροχή λύσεων που είναι καινοτόμες, επεκτάσιμες και προσαρμοσμένες στις ανάγκες της επιχείρησής σας. Πιστεύουμε στη δημιουργία ψηφιακών προϊόντων και προσελκύουν το κοινό σας, αφήνοντας μια μόνιμη εντύπωση.",
     },
   };
 
