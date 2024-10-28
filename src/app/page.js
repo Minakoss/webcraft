@@ -164,15 +164,15 @@ export default function Home() {
         }`}
       >
         <div className="absolute top-4 right-4 flex space-x-4">
-          {/* Login Icon */}
+          {/* Login Icon 
           <button onClick={() => router.push("/login")} title="Login">
             <FiLogIn className="text-xl text-gray-400" />
-          </button>
+          </button>*/}
 
-          {/* Register Icon */}
+          {/* Register Icon 
           <button onClick={() => router.push("/register")} title="Register">
             <FiUserPlus className="text-xl text-gray-400" />
-          </button>
+          </button>*/}
 
           {/* Language Toggle */}
           <button onClick={toggleLanguage} title="Lang">
