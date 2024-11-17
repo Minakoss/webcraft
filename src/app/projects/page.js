@@ -44,7 +44,7 @@ export default function Projects() {
           WebBlend Projects
         </h1>
         {/* Grid για projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Project 1 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row ">
             <img
