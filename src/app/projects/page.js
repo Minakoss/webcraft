@@ -46,7 +46,7 @@ export default function Projects() {
         {/* Grid για projects */}
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Project 1 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row ">
+          <div className=" group bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ">
             <img
               src="/project_photos/grainlife.png"
               alt="Project 1"
@@ -75,7 +75,7 @@ export default function Projects() {
           </div>
 
           {/* Project 2 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
+          <div className="group bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <img
               src="/project_photos/wordin.png"
               alt="Project 2"
@@ -110,7 +110,7 @@ export default function Projects() {
           </div>
 
           {/* Example Project 3 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
+          <div className="group bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <img
               src="/project_photos/helpanimals.png"
               alt="Project 1"
@@ -146,7 +146,7 @@ export default function Projects() {
           </div>
 
           {/* Example Project 4 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
+          <div className="group bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <img
               src="/project_photos/companypromo.png"
               alt="Project 1"
@@ -179,7 +179,7 @@ export default function Projects() {
           </div>
 
           {/* Example Project 5 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
+          <div className="group bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <img
               src="/project_photos/Analog-Life.png"
               alt="Project 1"

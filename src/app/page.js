@@ -296,16 +296,16 @@ export default function Home() {
 
               {/* Τεχνολογίες */}
               <div className="flex flex-wrap space-x-2 md:space-x-2 mt-4">
-                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540] hover:scale-105">
                   HTML/CSS
                 </span>
-                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540] hover:scale-105">
                   JavaScript
                 </span>
-                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540] hover:scale-105">
                   React
                 </span>
-                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540]">
+                <span className="px-2 py-1 text-sm md:px-4 md:py-2 md:text-base bg-[#0A192F] text-[#66E0FF] rounded-full shadow-md hover:bg-[#0A2540] hover:scale-105">
                   WordPress
                 </span>
               </div>
