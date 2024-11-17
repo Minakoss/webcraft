@@ -1,4 +1,4 @@
-"use client"; // Κάνουμε το component client-side
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -43,13 +43,14 @@ export default function Projects() {
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-6 mt-8 md:mt-0">
           WebBlend Projects
         </h1>
-        <div className="space-y-8">
-          {/* Example Project 1 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
+        {/* Grid για projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Project 1 */}
+          <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row ">
             <img
               src="/project_photos/grainlife.png"
               alt="Project 1"
-              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
+              className="w-50 h-48 object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">Grain Life</h2>
@@ -73,12 +74,12 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Example Project 2 */}
+          {/* Project 2 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row">
             <img
               src="/project_photos/wordin.png"
-              alt="Project 1"
-              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
+              alt="Project 2"
+              className="w-50 h-48 object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">WordIn</h2>
@@ -113,7 +114,7 @@ export default function Projects() {
             <img
               src="/project_photos/helpanimals.png"
               alt="Project 1"
-              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
+              className="w-50 h-48 object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">Help-Animals</h2>
@@ -149,7 +150,7 @@ export default function Projects() {
             <img
               src="/project_photos/companypromo.png"
               alt="Project 1"
-              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
+              className="w-50 h-48 object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">
@@ -182,7 +183,7 @@ export default function Projects() {
             <img
               src="/project_photos/Analog-Life.png"
               alt="Project 1"
-              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-4"
+              className="w-50 h-48 object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
             />
             <div className="flex flex-col">
               <h2 className="text-xl font-semibold text-white">Analog-Life</h2>
@@ -210,6 +211,7 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
       <Link
         href="/"
         className="fixed bottom-4 left-1/2 transform -translate-x-1/2"
